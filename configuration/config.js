@@ -1,5 +1,5 @@
 require("dotenv").config();
-const config = {
+const Config = {
   db: {
     DB_HOST: process.env.DB_HOST,
     DB_NAME: process.env.DB_NAME,
@@ -9,7 +9,8 @@ const config = {
   },
 };
 
-console.log("here00-", config);
+module.exports = Config;
+
 // DB_HOST=localhost
 // DB_NAME=library-management
 // DB_USER=postgres
