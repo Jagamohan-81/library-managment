@@ -2,7 +2,7 @@
 Creating a library management application to facilate libraries with quick,transparent,booking slot
 # School/Library Management App
 
-![App Screenshot](./app-screenshot.png)
+![App Screenshot](./client/public/app-dem-image.png)
 
 This is a web application for managing school or library operations. It is built using Next.js, Tailwind CSS, Node.js, Express, and PostgreSQL.
 
