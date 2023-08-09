@@ -31,11 +31,9 @@ module.exports = {
 
   schemas: {
     userRegistraionSchema: Joi.object({
-      name: Joi.string().alphanum().min(3).max(30).required().messages({
+      name: Joi.string().min(3).max(30).required().messages({
         "string.base": "Username should be a string",
         "string.empty": "Username is required",
-        "string.alphanum":
-          "Username should only contain alphanumeric characters",
         "string.min": "Username should be at least {#limit} characters long",
         "string.max": "Username should not exceed {#limit} characters",
         "any.required": "Username is required",
