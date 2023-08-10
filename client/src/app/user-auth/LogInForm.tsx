@@ -1,7 +1,7 @@
 "use client"
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import "./LogInForm.css";
+import "./RegisterForm.css";
 import { registerUser } from '@/app/APICalls';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
