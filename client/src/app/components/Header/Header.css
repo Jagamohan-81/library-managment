@@ -14,11 +14,17 @@
 }
 
 .nav-links {
-  width: 300px;
+  width: 500px;
 }
 
 .nav-links a {
-  width: 25%;
+  min-width: 50px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+.nav-links span {
+  min-width: 50px;
   color: white;
   text-decoration: none;
   transition: color 0.3s ease-in-out;

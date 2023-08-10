@@ -5,8 +5,8 @@ import "./RegisterForm.css";
 import { registerUser } from '@/app/APICalls';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleAuthMode } from '../store/reducers/authSlice';
-import { RootState } from '../store/store'
+import { toggleAuthMode } from '../../store/reducers/authSlice';
+import { RootState } from '../../store/store'
 function RegisterForm() {
     const dispatch = useDispatch();
     const handleClick = () => {
@@ -59,13 +59,13 @@ function RegisterForm() {
                         <label className="label" htmlFor='email'>
                             Email
                         </label>
-                        <Field className="field" id='email' name='email'  placeholder="Please enter email address"/>
+                        <Field className="field" id='email' name='email' placeholder="Please enter email address" />
                         <ErrorMessage name="email" component="div" className="error-message" />
 
                         <label className="label" htmlFor='password'>
                             Password
                         </label>
-                        <Field className="field" id='password' name='password' type='password' placeholder="Please enter a strong password"/>
+                        <Field className="field" id='password' name='password' type='password' placeholder="Please enter a strong password" />
                         <ErrorMessage name="password" component="div" className="error-message" />
 
                         <div className='mt-8 flex justify-around flex-col sm:flex-row '>
@@ -79,9 +79,6 @@ function RegisterForm() {
                     </Form>
                 )}
             </Formik>
-
-
-
         </>
     );
 }

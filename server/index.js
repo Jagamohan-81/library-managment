@@ -5,7 +5,7 @@ const userRouter = require("./routes/user.router");
 const app = express();
 app.use(express.json());
 
-app.use("/", userRouter);
+app.use("/user-auth", userRouter);
 
 app.listen(3001, () => {
   console.log("Hi i am listening at port 3001");

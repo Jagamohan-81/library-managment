@@ -7,8 +7,8 @@ const inter = Inter({ subsets: ['latin'] })
 import { Providers } from './store/Provider'
 
 export const metadata: Metadata = {
-  title: 'Library managment',
-  description: 'An app developed by Jagamohan panda',
+  title: 'Knowledge Hub',
+  description: 'An app developed by JP',
 }
 
 export default function RootLayout({
@@ -19,8 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Header />
         <Providers>
-          <Header />
+
           <main className='main-wraper'>
             {children}
           </main>

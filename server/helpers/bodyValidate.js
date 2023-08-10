@@ -62,5 +62,30 @@ module.exports = {
           "any.required": "Password is required",
         }),
     }),
+    userLoginSchema: Joi.object({
+      email: Joi.string()
+        .email({ tlds: { allow: true } }) // Validate email format
+        .required()
+        .messages({
+          "string.base": "Email should be a string",
+          "string.empty": "Email is required",
+          "string.email": "Invalid email format",
+          "any.required": "Email is required",
+        }),
+      password: Joi.string()
+        .pattern(
+          new RegExp(
+            "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$"
+          )
+        )
+        .required()
+        .messages({
+          "string.base": "Password should be a string",
+          "string.empty": "Password is required",
+          "string.pattern.base":
+            "Password must have at least 8 characters, with one of ,lowercase letter,uppercase letter,digit,special character",
+          "any.required": "Password is required",
+        }),
+    }),
   },
 };

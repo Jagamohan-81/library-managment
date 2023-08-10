@@ -17,7 +17,7 @@ module.exports = {
     });
   },
 
-  registerUser: async (data) => {
+  userRegisterModal: async (data) => {
     // console.log("data----", data);
     return new Promise((resolve, reject) => {
       db.one(
@@ -26,6 +26,22 @@ module.exports = {
       )
         .then(function (data) {
           resolve(data);
+        })
+        .catch(function (err) {
+          console.log(err);
+          reject(err);
+        });
+    });
+  },
+  userLoginByEmail: async (data) => {
+    return new Promise((resolve, reject) => {
+      db.oneOrNone("SELECT * FROM user_tbl WHERE user_email = $1", [data])
+        .then(function (user) {
+          if (user) {
+            resolve(user);
+          } else {
+            resolve(null);
+          }
         })
         .catch(function (err) {
           console.log(err);

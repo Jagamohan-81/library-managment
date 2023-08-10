@@ -17,4 +17,17 @@ module.exports = {
       resp.status(400).json({ status: 3, message: error.message });
     }
   },
+  validateUserExistanceInDB: async (req, resp, next) => {
+    try {
+      const { email } = req.body;
+      let userExist = await adminModal.findUserExistance(email);
+      if (userExist.success) {
+        next();
+      } else {
+      }
+    } catch (error) {
+      console.log(error);
+      resp.status(400).json({ status: 3, message: error.message });
+    }
+  },
 };

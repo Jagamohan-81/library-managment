@@ -21,3 +21,4 @@ const authSlice = createSlice({
 
 export const { toggleAuthMode } = authSlice.actions;
 export default authSlice.reducer;
+
