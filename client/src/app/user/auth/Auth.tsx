@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import RegisterForm from './RegisterForm'
-import LogInForm from './LogInForm'
+import LogInForm from './LogInPage'
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import jwt, { JwtPayload } from "jsonwebtoken";

@@ -18,8 +18,8 @@ interface LoginResponse {
     token: string;
 }
 interface initialValueType {
-    email: string,
-    password: string
+    email: string | null,
+    password: string | null
 }
 function LogInForm() {
     const router = useRouter()
@@ -41,6 +41,7 @@ function LogInForm() {
         email: '',
         password: '',
     };
+
 
     return (
         <>

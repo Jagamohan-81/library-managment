@@ -21,12 +21,15 @@ function RegisterForm() {
             .matches(
                 /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
                 'Password must contain at one of, lowercase letter,uppercase letter,number,special character !'
-            )
+            ),
+        role: Yup.string()
+            .required('Role is required !')
     });
     const initialValues = {
         name: '',
         email: '',
         password: '',
+        role: ''
     };
 
     return (
@@ -67,7 +70,19 @@ function RegisterForm() {
                         </label>
                         <Field className="field" id='password' name='password' type='password' placeholder="Please enter a strong password" />
                         <ErrorMessage name="password" component="div" className="error-message" />
-
+                        <label className="label me-4" htmlFor='role'>
+                            Role
+                        </label>
+                        <Field name="role" as="select" className="text-sm rounded-lg">
+                            <option value="" >
+                                May I know your role?
+                            </option>
+                            <option value="A">Admin</option>
+                            <option value="T">Teacher</option>
+                            <option value="S">Student</option>
+                            <option value="O">Other</option>
+                        </Field>
+                        <ErrorMessage name="role" component="span" className="error-message" />
                         <div className='mt-8 flex justify-around flex-col sm:flex-row '>
                             <button type='submit' className="button mt-2" disabled={isSubmitting}>
                                 {isSubmitting ? 'Registering...' : 'Register'}

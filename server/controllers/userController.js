@@ -5,7 +5,7 @@ const SALT_ROUNDS = parseInt(process.env.SALT_ROUNDS);
 module.exports = {
   userRegister: async (req, res, next) => {
     try {
-      const { name, email, password } = req.body;
+      const { name, email, password, role } = req.body;
       const created_at = new Date();
       const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
       await adminModal
@@ -13,6 +13,7 @@ module.exports = {
           name,
           email,
           password: hashedPassword,
+          role,
           created_at,
         })
         .then((data) => {
@@ -40,9 +41,8 @@ module.exports = {
         if (passwordMatch) {
           const token = jwt.sign(
             {
-              userId: userData.user_id,
               userName: userData.user_name,
-              role: "user",
+              role: userData.user_role,
             },
             process.env.JWT_SECRET,
             {

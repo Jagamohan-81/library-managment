@@ -6,11 +6,14 @@ interface LoginState {
   userName: string | null; // Add userName and userEmail fields
   userEmail: string | null;
 }
-
+interface initialValueType {
+  email: string | null,
+  password: string | null
+}
 // Define loginUser async action using createAsyncThunk
 export const loginUser = createAsyncThunk(
   'login/loginUser',
-  async (userDetails, thunkAPI) => {
+  async (userDetails: initialValueType, thunkAPI) => {
     try {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/user-auth/login`,

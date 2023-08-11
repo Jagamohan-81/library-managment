@@ -19,9 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        <Providers>
 
+        <Providers>
+          <Header />
           <main className='main-wraper'>
             {children}
           </main>

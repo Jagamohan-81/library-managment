@@ -4,7 +4,7 @@ const userRouter = require("./routes/user.router");
 
 const app = express();
 app.use(express.json());
-
+app.use(cors());
 app.use("/user-auth", userRouter);
 
 app.listen(3001, () => {

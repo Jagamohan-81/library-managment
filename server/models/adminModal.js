@@ -21,8 +21,8 @@ module.exports = {
     // console.log("data----", data);
     return new Promise((resolve, reject) => {
       db.one(
-        "INSERT INTO user_tbl(user_name,user_email,user_password,created_at) VALUES ($1,$2,$3,$4) RETURNING user_id",
-        [data.name, data.email, data.password, data.created_at]
+        "INSERT INTO user_tbl(user_name,user_email,user_password,user_role,created_at) VALUES ($1,$2,$3,$4,$5) RETURNING user_id",
+        [data.name, data.email, data.password, data.role, data.created_at]
       )
         .then(function (data) {
           resolve(data);

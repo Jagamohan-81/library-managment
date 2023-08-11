@@ -20,8 +20,8 @@ const NotFound: React.FC = () => {
                     <h2 className="text-3xl font-semibold">Oops, Page not found!</h2>
                 </div>
                 <p className="">
-                    The page you were looking for couldn't be found. It might have been
-                    moved, renamed, or simply doesn't exist. We apologize for any
+                    The page you were looking for couldn&apos;t be found. It might have been
+                    moved, renamed, or simply doesn&apos;t exist. We apologize for any
                     inconvenience this may have caused.
                 </p>
                 <div className="button">

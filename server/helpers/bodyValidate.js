@@ -61,6 +61,11 @@ module.exports = {
             "Password must have at least 8 characters, with one of ,lowercase letter,uppercase letter,digit,special character",
           "any.required": "Password is required",
         }),
+      role: Joi.string().required().messages({
+        "string.base": "Role should be a string",
+        "string.empty": "Role is required",
+        "any.required": "Role is required",
+      }),
     }),
     userLoginSchema: Joi.object({
       email: Joi.string()
