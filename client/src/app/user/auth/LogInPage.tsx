@@ -1,22 +1,14 @@
 "use client"
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import "./RegisterForm.css";
 import { loginUser } from '../../store/reducers/authUserLoginSlice';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleAuthMode } from '../../store/reducers/authSlice';
+import { toggleAuthMode, setLoggedIn, checkUserExists } from '../../store/reducers/authSlice';
 import { useRouter } from 'next/navigation'
-interface LoginResponse {
-    status: string;
-    data: {
-        name: string;
-        email: string;
-    };
-    payload: any,
-    message: string;
-    token: string;
-}
+import { RootState } from '@/app/store/store';
+
 interface initialValueType {
     email: string | null,
     password: string | null
@@ -24,6 +16,15 @@ interface initialValueType {
 function LogInForm() {
     const router = useRouter()
     const dispatch = useDispatch();
+
+
+    // Call checkUserExists when your component mounts
+    useEffect(() => {
+        dispatch(checkUserExists());
+    }, [dispatch]);
+
+    // Retrieve the loggedIn status from the store
+    const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
     const handleClick = () => {
         dispatch(toggleAuthMode());
     };
@@ -44,7 +45,9 @@ function LogInForm() {
 
 
     return (
+
         <>
+
             <Formik
                 initialValues={initialValues}
                 onSubmit={async (values: initialValueType, { setSubmitting }) => {
@@ -52,6 +55,7 @@ function LogInForm() {
                         setSubmitting(true);
                         const response: any = await dispatch(loginUser(values) as any);
                         if (response.payload.status == "OK") {
+                            dispatch(setLoggedIn(true))
                             router.push('/')
                         }
                     } catch (error) {

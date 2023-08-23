@@ -24,7 +24,6 @@ body {
 .content {
   flex: 1;
   padding: 20px;
-  
 }
 
 .footer {
@@ -37,7 +36,8 @@ body {
     padding-top: 150px;
   }
 }
-@media (max-width: 930px) {
+
+@media (min-width: 640px) and (max-width: 930px) {
   .main-wraper {
     padding: 9% 10% 0;
   }

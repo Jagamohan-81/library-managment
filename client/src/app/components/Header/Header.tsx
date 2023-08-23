@@ -5,13 +5,13 @@ import "./Header.css";
 import jwt, { JwtPayload } from "jsonwebtoken";
 import { UseSelector } from "react-redux/es/hooks/useSelector";
 import { useDispatch, useSelector } from 'react-redux';
-import Loader from "@/app/Loader";
+import { Loader } from "@/app/Loader";
 import { RootState } from "@/app/store/store";
 const Header: React.FC = () => {
   type UserToken = string;
   type UserData = string | null
   const [userName, setUserName] = useState<UserData | null>(null);
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const user = useSelector((state: RootState) => state.userLogin);
   useEffect(() => {
     // setUserName(user.userName)
