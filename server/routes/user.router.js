@@ -1,6 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const { userRegister, userLogin } = require("../controllers/userController");
+const {
+  userRegister,
+  userLogin,
+  userUpdate,
+} = require("../controllers/userController");
 const { validateBody, schemas } = require("../helpers/bodyValidate");
 const {
   validateDB,
@@ -26,5 +30,6 @@ router.post(
   validateUserExistanceInDB,
   userLogin
 );
+// router.post("/upload/:Id", userUpdate);
 
 module.exports = router;

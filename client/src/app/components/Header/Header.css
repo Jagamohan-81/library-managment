@@ -16,8 +16,9 @@
 .nav-links {
   width: 500px;
 }
-.nav-links .user-name {
+.user-name {
   background-color: #010081;
+  overflow: hidden;
 }
 .nav-links a {
   min-width: 50px;
@@ -34,6 +35,27 @@
 
 .nav-links a:hover {
   color: var(--Jagamohan81-personal-yellow);
+}
+.nav-links-mobile {
+  position: fixed;
+  right: -100%;
+  width: 40%;
+  background-color: transparent;
+  transition: right 0.7s ease-in-out;
+  overflow-y: auto;
+  background-color: transparent;
+  background-color: var(--Jagamohan81-personal-light-blue-v1);
+  color: #010081;
+}
+
+.mobile-slide-container {
+  z-index: 10;
+}
+.mobile-menu-button {
+  z-index: 100;
+}
+.nav-links-mobile-open {
+  right: 0; /* Slide in from the right */
 }
 
 @media (max-width: 639px) {

@@ -71,4 +71,7 @@ module.exports = {
       res.status(500).json({ status: 4, message: "An error occurred" }).end();
     }
   },
+  userUpdate: async (req, res, next) => {
+    
+  },
 };

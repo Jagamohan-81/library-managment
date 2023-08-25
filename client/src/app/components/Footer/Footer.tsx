@@ -4,9 +4,9 @@ import './Footer.css'; // Import your CSS file for styling
 const Footer: React.FC = () => {
   return (
     <footer className="footer-container ">
-      <div className="footer-content flex flex-col sm:flex-row justify-between items-center px-4 py-2">
-        <div className="footer-logo text-2xl font-bold mb-2 sm:mb-0 sm:mr-4">School Management System</div>
-        <div className="footer-links flex flex-row justify-around">
+      <div className="footer-content flex flex-col sm:flex-row justify-between items-center md:px-4 md:py-2">
+        <div className="footer-logo text-2xl font-bold">School Management System</div>
+        <div className="footer-links md:flex hidden flex-row justify-around ">
           <a href="/about">About</a>
           <a href="/contact">Contact</a>
           <a href="/terms">Terms of Use</a>
