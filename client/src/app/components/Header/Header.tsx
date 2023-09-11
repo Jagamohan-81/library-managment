@@ -21,7 +21,6 @@ const Header: React.FC = () => {
     setMenuOpen(!isMenuOpen);
   };
   useEffect(() => {
-    // setUserName(user.userName)
     setLoading(true)
 
     const getToken = async () => {
@@ -42,42 +41,6 @@ const Header: React.FC = () => {
 
 
   return (
-    // <header className="header-container flex flex-col md:flex-row justify-between items-center px-4 py-2 me-5">
-    //   <div className="flex justify-between w-full">
-    //     <h3 className="logo text-2xl font-bold mb-2 sm:mb-0 sm:mr-4">
-    //       Knowledge Hub
-    //     </h3>
-    //     <div className="flex items-center md:hidden">
-    //       {/* Hamburger menu icon */}
-    //       <button className="mobile-menu-button">
-    //         <svg className="h-6 w-6 text-white-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    //           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-    //         </svg>
-    //       </button>
-    //     </div>
-    //   </div>
-
-
-
-    //   <nav className="nav-links flex flex-row md:justify-end justify-between  mx-5">
-
-    //     <div className="hidden md:flex items-center">
-    //       {/* User section */}
-    //       {userName && userName !== null ? (
-    //         <span className="text-white rounded-lg text-sm p-2 text-center inline-flex items-center user-name">{userName}</span>
-    //       ) : loading ? <Loader /> : null}
-    //     </div>
-
-    //     <div className="hidden md:flex justify-around items-center m-2">
-    //       {!loading && !userName ?
-    //         <Link href="/user/auth" className="me-1">Sign Up</Link> : null}
-    //       <Link href="/" >Home</Link>
-    //       <Link href="/about" >About</Link>
-    //       <Link href="/contact" >Contact</Link>
-    //     </div>
-    //   </nav>
-
-    // </header >
     <header className="header-container flex flex-col md:flex-row justify-between items-center px-4 py-2 me-5">
       <div className="flex justify-between w-full">
         <h3 className="logo text-2xl font-bold mb-2 sm:mb-0 sm:mr-4">

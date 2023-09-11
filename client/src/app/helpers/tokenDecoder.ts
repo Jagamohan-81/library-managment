@@ -2,6 +2,7 @@ import jwt, { JwtPayload } from 'jsonwebtoken';
 type UserToken = string;
 interface DecodedToken {
     userName: string;
+    id: Number | string;
     role: string;
     iat: number;
     exp: number;

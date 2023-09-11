@@ -1,6 +1,60 @@
-import React from 'react';
+"use client"
+import React, { useState, useEffect } from 'react';
 import './Profile.css'
+import { decodeToken } from "@/app/helpers/tokenDecoder";
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
+import { userDetails } from '@/app/APICalls';
 function ProfileCard() {
+
+    type UserData = {
+        createdAt: string,
+        email
+        :
+        string,
+        name
+        :
+        string,
+        profilePic
+        :
+        string | null,
+        role
+        :
+        string,
+    } | null
+
+    const [userData, setUserData] = useState<UserData | null>(null);
+    const [loading, setLoading] = useState(true)
+    const isSignUpMode = useSelector((state: RootState) => state.auth.isSignUpMode);
+    const user = useSelector((state: RootState) => state.userLogin);
+    useEffect(() => {
+        setLoading(true)
+        const getToken = async () => {
+            if (typeof window !== "undefined") {
+                const userTokenData = await decodeToken();
+                if (name !== undefined) {
+                    getUser(userTokenData?.id)
+                    // setUserData(userTokenData);
+                }
+            }
+            setTimeout(() => setLoading(false), 1000)
+        };
+        getToken()
+
+    }, [user]);
+
+    const getUser = async (id: any) => {
+        if (typeof window !== "undefined") {
+            const userDataRes = await userDetails(id);
+            if (userDataRes) {
+                setUserData(userDataRes.data)
+            }
+        }
+        setTimeout(() => setLoading(false), 1000)
+    };
+
+
+
     return (
         <div className="profile-container mx-auto bg-white shadow-md rounded-md overflow-hidden md:w-500 md:h-300">
             <div className="flex justify-center items-center py-4 bg-gray-700">
@@ -11,8 +65,8 @@ function ProfileCard() {
                 />
             </div>
             <div className="px-6 py-4">
-                <h1 className="text-xl font-semibold text-gray-800">John Doe</h1>
-                <p className="text-gray-600">john.doe@example.com</p>
+                <h1 className="text-xl font-semibold text-gray-800">{userData?.name}</h1>
+                <p className="text-gray-600">{userData?.email}</p>
                 <p className="text-gray-600">Class: 10A</p>
                 <p className="text-gray-600">Section: A</p>
                 <p className="text-gray-600">Roll Number: 12345</p>

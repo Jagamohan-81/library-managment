@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-
+const adminModel = require("../models/adminModal");
 module.exports = {
   userAuthenticateMiddleware: (req, res, next) => {
     const token =
@@ -15,13 +15,12 @@ module.exports = {
           .status(403)
           .json({ status: 5, message: "Token invalid or expired" });
       }
-      if (decoded.role != "user") {
+      if (decoded.role != "A") {
         return res.status(403).json({
           status: 5,
           message: "Not permitted to acces with this role",
         });
       }
-
       req.user = decoded;
       next();
     });

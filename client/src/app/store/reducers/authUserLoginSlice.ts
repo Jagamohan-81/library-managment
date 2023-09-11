@@ -16,7 +16,7 @@ export const loginUser = createAsyncThunk(
   async (userDetails: initialValueType, thunkAPI) => {
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/user-auth/login`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/student/login`,
         {
           method: 'POST',
           headers: {
