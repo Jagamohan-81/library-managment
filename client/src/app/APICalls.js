@@ -36,12 +36,12 @@ export const loginUser = async (userDetails) => {
   }
 };
 
-export const userDetails = async (userId) => {
+export const studeneDetails = async (userId) => {
   try {
     const token = localStorage.getItem("token"); // Retrieve the token from localStorage
 
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/user-auth/user-details/${userId}`,
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/student/user-details/${userId}`,
       {
         method: "GET",
         headers: {

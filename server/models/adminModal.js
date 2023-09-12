@@ -121,4 +121,20 @@ module.exports = {
         });
     });
   },
+  getStudentDetailsById: async (id) => {
+    return new Promise((resolve, reject) => {
+      db.oneOrNone("SELECT * FROM students_tbl WHERE id = $1", [id])
+        .then(function (user) {
+          if (user) {
+            resolve(user);
+          } else {
+            resolve(null);
+          }
+        })
+        .catch(function (err) {
+          console.log(err);
+          reject(err);
+        });
+    });
+  },
 };

@@ -1,6 +1,7 @@
 const adminModal = require("../models/adminModal");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const { use } = require("../routes/user.router");
 const SALT_ROUNDS = parseInt(process.env.SALT_ROUNDS);
 module.exports = {
   userRegister: async (req, res, next) => {
@@ -161,6 +162,37 @@ module.exports = {
             createdAt: userDetail.created_at,
             profilePic: userDetail.user_profile_pic,
             // password: userDetail.user_password,
+          },
+          message: "User details retrieved successfully",
+        });
+        next();
+      } else {
+        res.status(404).json({
+          status: 4,
+          message: "User not found",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ status: 4, message: "An error occurred" }).end();
+    }
+  },
+  studentDetails: async (req, res, next) => {
+    try {
+      const { userId } = req.params;
+      const userDetail = await adminModal.getStudentDetailsById(userId);
+      if (userDetail) {
+        res.status(200).json({
+          status: "OK",
+          data: {
+            name: userDetail.name,
+            email: userDetail.email,
+            role: userDetail.role,
+            class: userDetail.class_name,
+            roll_no: userDetail.roll_no,
+            section: userDetail.section,
+            createdAt: userDetail.created_at,
+            profilePic: userDetail.profile_pic,
           },
           message: "User details retrieved successfully",
         });

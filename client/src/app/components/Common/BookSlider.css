@@ -1,0 +1,31 @@
+/* BookSlider.css */
+
+.slick-slide > div {
+  margin: 0 10px;
+}
+.slick-list {
+  margin: 0 -10px;
+}
+
+.slide-container {
+  margin: 0 8px; /* Adjust the margin as needed */
+  position: relative;
+}
+
+.slide-overlay {
+  position: absolute;
+  bottom: -50px; /* Initial position, off-screen */
+  left: 0;
+  width: 100%;
+  background-color: var(--Jagamohan81-personal-dark-blue-v1);
+  padding: 8px;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: bottom 0.3s ease;
+}
+
+.slide-container:hover .slide-overlay {
+  bottom: 0;
+}
