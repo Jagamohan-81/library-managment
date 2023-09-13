@@ -60,6 +60,8 @@ function ProfileCard() {
                     <Image
                         className="rounded-full h-16 w-16 object-cover border-2 border-white"
                         src="https://via.placeholder.com/100"
+                        width={100}
+                        height={100}
                         alt="Profile"
                     />
                 </div>

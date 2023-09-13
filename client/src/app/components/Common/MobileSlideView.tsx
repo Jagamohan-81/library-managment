@@ -16,8 +16,8 @@ const MobileSlideView = ({ isMenuOpen, toggleMenu }: MobileSlideViewProps) => {
     useEffect(() => {
         const headerHeight = document.querySelector('header')?.clientHeight || 0;
         setHeaderHeight(headerHeight)
-        const footerHeight = document.querySelector('footer')?.clientHeight || 0;
-        const availableHeight = `calc(100vh - ${headerHeight}px - ${footerHeight}px)`;
+        // const footerHeight = document.querySelector('footer')?.clientHeight || 0;
+        const availableHeight = `calc(100vh - ${headerHeight}px )`;
         setNavHeight(availableHeight);
     }, []);
     useEffect(() => {
@@ -42,7 +42,12 @@ const MobileSlideView = ({ isMenuOpen, toggleMenu }: MobileSlideViewProps) => {
     return (
         <>
             <nav className={`nav-links-mobile ${isMenuOpen ? 'nav-links-mobile-open' : ''} md:hidden flex flex-col justify-start`} style={{ height: navHeight, top: headerHeight }}>
-                <div className="flex flex-col items-center justify-between mobile-slide-containe h-full">
+                <div className="flex flex-col items-center  mobile-slide-containe h-full">
+                    <div className={`flex items-center justify-center mx-2`}>
+                        {userName ? (
+                            <span className="text-white rounded-lg text-sm p-2 text-center inline-flex items-center user-name my-2">{userName.split(" ")[0]}</span>
+                        ) : loading ? <Loader /> : null}
+                    </div>
                     <div className={`flex items-center justify-center flex-col`}>
                         {!loading && !userName ? (
                             <Link href="/user/auth" className="my-2 text-white hover:bg-blue-700 active:bg-blue-800 focus:bg-blue-600 focus-visible:bg-blue-600 rounded-md p-2 transition duration-300" onClick={toggleMenu}>
@@ -53,11 +58,7 @@ const MobileSlideView = ({ isMenuOpen, toggleMenu }: MobileSlideViewProps) => {
                         <Link href="/about" className="my-2 text-white hover:bg-blue-700 active:bg-blue-800 focus:bg-blue-600 focus-visible:bg-blue-600 rounded-md p-2 transition duration-300" onClick={toggleMenu}>About</Link>
                         <Link href="/contact" className="my-2 text-white hover:bg-blue-700 active:bg-blue-800 focus:bg-blue-600 focus-visible:bg-blue-600 rounded-md p-2 transition duration-300" onClick={toggleMenu}>Contact</Link>
                     </div>
-                    <div className={`flex items-center justify-center`}>
-                        {userName ? (
-                            <span className="text-white rounded-lg text-sm p-2 text-center inline-flex items-center user-name my-2">{userName}</span>
-                        ) : loading ? <Loader /> : null}
-                    </div>
+
                 </div>
             </nav>
         </>

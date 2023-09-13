@@ -38,18 +38,19 @@ const CourseCard: React.FC<CourseCardProps> = ({
                 <p className="text-gray-700 mb-4">{description}</p>
                 <div className='flex justify-around'>
                     <button
-                        className="bg-blue-500 text-white px-4 py-2 rounded-md mr-2"
+                        className="bg-blue-500 text-white px-4 py-2 rounded-md mr-2 transition duration-300 ease-in-out transform hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 active:bg-blue-700"
                         onClick={handleDetailsClick}
                     >
                         View Details
                     </button>
                     <button
-                        className="bg-green-500 text-white px-4 py-2 rounded-md mr-2"
+                        className="bg-green-500 text-white px-4 py-2 rounded-md mr-2 transition duration-300 ease-in-out transform hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-300 active:bg-green-700"
                         onClick={handleMaterialsClick}
                     >
                         Access Materials
                     </button>
                 </div>
+
 
             </div>
             <Modal title="title" content="content" show={show} handleClose={handleClose} />
