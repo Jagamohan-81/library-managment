@@ -35,7 +35,7 @@ function BookSlider() {
     const images = [
 
         {
-            link: '/user/profile',
+            link: '/user/e-library',
             text: 'E - Library',
             url: 'https://img.freepik.com/free-photo/cafe-frankfurt-germany_1268-20912.jpg?w=1380&t=st=1694501709~exp=1694502309~hmac=7f83224f5111faabb7d50d42cd90840f9d3748d5e3d95842fd203262a9989412',
         },
@@ -45,12 +45,12 @@ function BookSlider() {
             url: 'https://img.freepik.com/free-photo/front-view-stacked-books-ladders-education-day_23-2149241046.jpg?w=1380&t=st=1694501235~exp=1694501835~hmac=eb1a74cd1fc347203949b78fc11445712e417480f18eac8b994b6264029882ed',
         },
         {
-            link: '/user/profile',
+            link: '/user/my-assignments',
             text: 'Assignments',
             url: 'https://img.freepik.com/free-photo/magic-fairytale-book-concept_23-2150171884.jpg?w=1380&t=st=1694501419~exp=1694502019~hmac=a39d3d7fc8f2f9880f2fed8ff8524c621fa34f27cf861776342aadece1dd303a',
         },
         {
-            link: '/user/profile',
+            link: '#',
             text: 'Fun & Quizzes',
             url: 'https://img.freepik.com/free-photo/young-woman-jumping-alone_23-2148979469.jpg?w=1380&t=st=1694501794~exp=1694502394~hmac=d2765101c58e8822583d1f7b345291e9d3e9de7e2e0bdf939a093a36952a85a0',
         }

@@ -16,8 +16,6 @@ const Modal: React.FC<ModalProps> = ({ title, content, show, handleClose }) => {
 
     return (
         <>
-
-
             {show && (
                 <div className="fixed inset-0 flex items-center justify-center z-50 mx-2">
                     <div className="modal-overlay fixed inset-0 bg-black opacity-50"></div>

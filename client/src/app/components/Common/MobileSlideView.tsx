@@ -50,13 +50,13 @@ const MobileSlideView = ({ isMenuOpen, toggleMenu }: MobileSlideViewProps) => {
                     </div>
                     <div className={`flex items-center justify-center flex-col`}>
                         {!loading && !userName ? (
-                            <Link href="/user/auth" className="my-2 text-white hover:bg-blue-700 active:bg-blue-800 focus:bg-blue-600 focus-visible:bg-blue-600 rounded-md p-2 transition duration-300" onClick={toggleMenu}>
+                            <Link href="/user/auth" className=" text-white hover:bg-blue-700 active:bg-blue-800 focus:bg-blue-600 focus-visible:bg-blue-600 rounded-md p-2 transition duration-300" onClick={toggleMenu}>
                                 Sign Up
                             </Link>
                         ) : null}
-                        <Link href="/" className="my-2 text-white hover:bg-blue-700 active:bg-blue-800 focus:bg-blue-600 focus-visible:bg-blue-600 rounded-md p-2 transition duration-300" onClick={toggleMenu}>Home</Link>
-                        <Link href="/about" className="my-2 text-white hover:bg-blue-700 active:bg-blue-800 focus:bg-blue-600 focus-visible:bg-blue-600 rounded-md p-2 transition duration-300" onClick={toggleMenu}>About</Link>
-                        <Link href="/contact" className="my-2 text-white hover:bg-blue-700 active:bg-blue-800 focus:bg-blue-600 focus-visible:bg-blue-600 rounded-md p-2 transition duration-300" onClick={toggleMenu}>Contact</Link>
+                        <Link href="/" className=" text-white hover:bg-blue-700 active:bg-blue-800 focus:bg-blue-600 focus-visible:bg-blue-600 rounded-md p-2 transition duration-300" onClick={toggleMenu}>Home</Link>
+                        <Link href="/about" className=" text-white hover:bg-blue-700 active:bg-blue-800 focus:bg-blue-600 focus-visible:bg-blue-600 rounded-md p-2 transition duration-300" onClick={toggleMenu}>About</Link>
+                        <Link href="/contact" className=" text-white hover:bg-blue-700 active:bg-blue-800 focus:bg-blue-600 focus-visible:bg-blue-600 rounded-md p-2 transition duration-300" onClick={toggleMenu}>Contact</Link>
                     </div>
 
                 </div>

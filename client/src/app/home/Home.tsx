@@ -13,18 +13,12 @@ function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 main-div">
                 <Link href='/user/profile' className={`${commonClassName}`}>Profile</Link>
                 <Link href='/user/my-courses' className={`${commonClassName}`}>Courses</Link>
-                <Link href='#' className={`${commonClassName}`} > Assignments</Link >
-                <Link href='#' className={`${commonClassName}`} > E - library</Link >
+                <Link href='/user/my-assignments' className={`${commonClassName}`} > Assignments</Link >
+                <Link href='/user/e-library' className={`${commonClassName}`} > E - library</Link >
                 <Link href='#' className={`${commonClassName}`} > Fun & Quizzes</Link >
             </div >
-
-
             <BookSlider />
-
-
         </>
-
-
     )
 }
 export default HomePage

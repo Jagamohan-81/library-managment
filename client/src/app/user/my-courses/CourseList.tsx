@@ -1,5 +1,5 @@
 import React from 'react';
-import CourseCard from '@/app/components/Common/CourseCard';
+import CourseCard from '@/app/user/my-courses/CourseCard';
 interface Course {
     courseName: string;
     instructor: string;
