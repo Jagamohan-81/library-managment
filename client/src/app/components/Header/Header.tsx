@@ -43,9 +43,12 @@ const Header: React.FC = () => {
   return (
     <header className="header-container flex flex-col md:flex-row justify-between items-center px-4 md:py-4 py-2 me-5">
       <div className="flex justify-between w-full">
-        <h3 className="logo text-2xl font-bold sm:mr-4">
+        {/* <h3 className="logo text-2xl font-bold sm:mr-4">
+        </h3> */}
+        <Link href='/' className="logo text-2xl font-bold sm:mr-4">
           Knowledge Hub
-        </h3>
+
+        </Link>
         <div className="md:hidden">
           <button onClick={toggleMenu} className="mobile-menu-button">
             {

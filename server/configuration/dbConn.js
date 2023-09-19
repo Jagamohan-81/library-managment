@@ -36,3 +36,11 @@ db.connect()
   });
 
 module.exports = db;
+// DB_HOST=localhost
+// DB_NAME=library-management
+// DB_USER=postgres
+// DB_PASS=root
+// DB_PORT=5432
+// APP_PORT=3000
+// SALT_ROUNDS = 10
+// JWT_SECRET=jagamohan_panda_81

@@ -137,4 +137,55 @@ module.exports = {
         });
     });
   },
+
+  getAllCourses: async () => {
+    return new Promise((resolve, reject) => {
+      db.manyOrNone("SELECT * FROM courses_tbl")
+        .then(function (courses) {
+          if (courses) {
+            resolve(courses);
+          } else {
+            resolve(null);
+          }
+        })
+        .catch(function (err) {
+          console.log(err);
+          reject(err);
+        });
+    });
+  },
+  getAllBooks: async () => {
+    return new Promise((resolve, reject) => {
+      db.manyOrNone(
+        "SELECT book_id AS id,book_name AS name,book_category AS category,book_quantity AS qty ,book_author as author FROM books_tbl"
+      )
+        .then(function (courses) {
+          if (courses) {
+            resolve(courses);
+          } else {
+            resolve(null);
+          }
+        })
+        .catch(function (err) {
+          console.log(err);
+          reject(err);
+        });
+    });
+  },
+  getAllCoursesByUserId: async (id) => {
+    return new Promise((resolve, reject) => {
+      db.manyOrNone("SELECT * FROM courses_tbl")
+        .then(function (courses) {
+          if (courses) {
+            resolve(courses);
+          } else {
+            resolve(null);
+          }
+        })
+        .catch(function (err) {
+          console.log(err);
+          reject(err);
+        });
+    });
+  },
 };
