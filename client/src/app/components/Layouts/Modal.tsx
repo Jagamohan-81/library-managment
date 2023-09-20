@@ -36,7 +36,7 @@ const Modal: React.FC<ModalProps> = ({ title, content, show, handleClose }) => {
                         <div className="modal-footer border-t border-gray-200 p-4 justify-end flex">
                             <button
                                 onClick={closeModal}
-                                className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2"
+                                className="bg-gray-300 hover:bg-gray-600 hover:text-white text-gray-800 font-bold py-2 px-4 rounded mr-2"
                             >
                                 Close
                             </button>

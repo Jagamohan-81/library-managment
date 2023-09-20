@@ -1,6 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const { getAllCourses } = require("../controllers/courseController");
+const {
+  getAllCourses,
+  getAllCoursesByUserId,
+  getAllAssignmentsByUserId,
+} = require("../controllers/courseController");
 const {
   validateDB,
   validateStudentExistanceInDB,
@@ -14,5 +18,7 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/get-list", getAllCourses);
+router.get("/my-course/:userId", getAllCoursesByUserId);
+router.get("/my-assignments/:userId", getAllAssignmentsByUserId);
 
 module.exports = router;

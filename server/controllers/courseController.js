@@ -22,9 +22,10 @@ module.exports = {
     }
   },
   getAllCoursesByUserId: async (req, res, next) => {
+    const id = req.params.userId;
     try {
-      await adminModal.getAllCoursesByUserId().then((data) => {
-        if (data) {
+      await adminModal.getAllCoursesByUserId(id).then((data) => {
+        if (data.length !== 0) {
           res.status(200).json({
             status: "OK",
             message: "All Courses Fetched Successfully",
@@ -33,7 +34,29 @@ module.exports = {
         } else {
           res.status(400).json({
             status: "FAILED",
-            message: "Issue Fetching Courses",
+            message: "No course assigned to this user",
+          });
+        }
+      });
+    } catch (error) {
+      console.log(error);
+      res.status(400).json({ status: 3, message: error }).end();
+    }
+  },
+  getAllAssignmentsByUserId: async (req, res, next) => {
+    const id = req.params.userId;
+    try {
+      await adminModal.getAllAssignmentsByUserId(id).then((data) => {
+        if (data.length !== 0) {
+          res.status(200).json({
+            status: "OK",
+            message: "All Assignments Fetched Successfully",
+            data: data,
+          });
+        } else {
+          res.status(400).json({
+            status: "FAILED",
+            message: "No assignments found for this user",
           });
         }
       });

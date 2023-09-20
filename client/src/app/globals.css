@@ -425,3 +425,6 @@ body {
     animation: bounceRight 2s infinite;
   }
 }
+.card-height {
+  height: 200px;
+}

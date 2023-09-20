@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import "./BookSlider.css"
 import Link from 'next/link';
+import Image from 'next/image';
 function BookSlider() {
     const sliderSettings = {
         dots: true,
@@ -67,7 +68,7 @@ function BookSlider() {
                     {images.map((image, index) => (
                         <Link href={image?.link} key={index} >
                             <div key={index} className="slide-container ">
-                                <img src={image.url} alt={image.text} className="mx-auto custom-slider-image" />
+                                <Image src={image.url} alt={image.text} className="mx-auto custom-slider-image" />
                                 <div className="slide-overlay">
                                     {image.text}
                                 </div>

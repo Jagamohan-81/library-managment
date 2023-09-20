@@ -57,3 +57,68 @@ export const studeneDetails = async (userId) => {
     throw error;
   }
 };
+export const allCourses = async () => {
+  try {
+    const token = localStorage.getItem("token"); // Retrieve the token from localStorage
+
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/course/get-list`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    const data = await res.json();
+    return await data.data;
+  } catch (error) {
+    console.error("Error retrieving user details:", error.message);
+    throw error;
+  }
+};
+
+export const allCoursesById = async (id) => {
+  try {
+    const token = localStorage.getItem("token"); // Retrieve the token from localStorage
+
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/course/my-course/${id}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    const data = await res.json();
+    return await data.data;
+  } catch (error) {
+    console.error("Error retrieving user details:", error.message);
+    throw error;
+  }
+};
+
+export const allAssignmentsById = async (id) => {
+  try {
+    const token = localStorage.getItem("token"); // Retrieve the token from localStorage
+
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/course/my-assignments/${id}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    const data = await res.json();
+    return await data.data;
+  } catch (error) {
+    console.error("Error retrieving user details:", error.message);
+    throw error;
+  }
+};

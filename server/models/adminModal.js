@@ -174,7 +174,42 @@ module.exports = {
   },
   getAllCoursesByUserId: async (id) => {
     return new Promise((resolve, reject) => {
-      db.manyOrNone("SELECT * FROM courses_tbl")
+      db.manyOrNone(
+        `
+        SELECT courses_tbl.*
+        FROM courses_assigned_tbl
+        JOIN courses_tbl ON courses_assigned_tbl.course_id = courses_tbl.id
+        WHERE courses_assigned_tbl.student_id = $1
+        AND courses_assigned_tbl.status = 1
+        `,
+        [id]
+      )
+        .then(function (courses) {
+          if (courses) {
+            resolve(courses);
+          } else {
+            resolve(null);
+          }
+        })
+        .catch(function (err) {
+          console.log(err);
+          reject(err);
+        });
+    });
+  },
+  getAllAssignmentsByUserId: async (id) => {
+    return new Promise((resolve, reject) => {
+      db.manyOrNone(
+        `
+        SELECT assignments_tbl.submission_date, courses_tbl.name AS name ,courses_tbl.id AS id ,courses_tbl.teacher AS teacher,courses_tbl.description AS description
+        FROM assignments_tbl
+        JOIN courses_tbl ON assignments_tbl.course_id = courses_tbl.id
+        WHERE assignments_tbl.student_id = $1
+        AND assignments_tbl.status = 1
+        `,
+        [id]
+      )
+
         .then(function (courses) {
           if (courses) {
             resolve(courses);
