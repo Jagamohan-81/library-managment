@@ -1,7 +1,7 @@
-# School - Library Management App
+# School - School Management App
 ![App Screenshot](./client/public/app-dem-image.png)
 
-This is a comprehensive web application designed to streamline school operations. Leveraging the power of modern technologies such as Next.js, TypeScript, React, Redux, Redux-Toolkit, Tailwind CSS, Node.js, Express, and PostgreSQL, the School Library Management App offers a wide range of features to enhance efficiency and organization within educational institutions.
+This is a comprehensive web application designed to streamline school operations. Leveraging the power of modern technologies such as Next.js, TypeScript, React, Redux, Redux-Toolkit, Tailwind CSS, Node.js, Express, and PostgreSQL, the School Management App offers a wide range of features to enhance efficiency and organization.n within educational institutions.
 Features
 
 ##User Authentication: Ensure secure user registration and login functionality to protect sensitive data.
